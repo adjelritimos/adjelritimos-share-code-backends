@@ -34,6 +34,8 @@ io.on('connection', (socket) => {
     })
 })
 
+server.get('/', (req, res) => { res.send('Servidor funcionando!'); })
+
 server.listen(5000, () => {
     console.log('Servidor rodando na porta 5000')
 })
