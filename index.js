@@ -5,6 +5,7 @@ const cors = require('cors')
 
 const app = express()
 app.use(cors())
+app.use(express.json())
 const server = http.createServer(app)
 const io = new Server(server, { cors: { origin: "*" } })
 
@@ -34,7 +35,9 @@ io.on('connection', (socket) => {
     })
 })
 
-server.get('/', (req, res) => { res.send('Servidor funcionando!'); })
+app.get('/', (req, res) => {
+    res.send('Servidor funcionando!')
+})
 
 server.listen(5000, () => {
     console.log('Servidor rodando na porta 5000')
