@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 })
 
 app.get('/', (req, res) => {
-    res.send('Servidor funcionando!')
+    res.status(200).json(sessions)
 })
 
 server.listen(5000, () => {
